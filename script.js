@@ -1,4 +1,5 @@
 // Menu Data Structure
+// Menu Data Structure
 const menuData = [
     {
         id: "classic",
@@ -49,10 +50,9 @@ const qrModal = document.getElementById('qrModal');
 const showQrBtn = document.getElementById('showQr');
 const closeQr = document.querySelector('.close-qr');
 
-// Initialize Menu - FIXED to prevent duplicates
+// Initialize Menu
 function buildMenu() {
-    // Clear existing content first
-    main.innerHTML = '';
+    main.innerHTML = ''; // Clear existing content
     
     menuData.forEach(section => {
         const sectionEl = document.createElement('section');
@@ -66,6 +66,7 @@ function buildMenu() {
         const title = document.createElement('h2');
         title.className = 'section-title';
         title.textContent = section.title;
+        
         header.appendChild(title);
         
         // Add sizes if they exist
@@ -92,6 +93,11 @@ function buildMenu() {
         section.items.forEach(item => {
             const itemEl = document.createElement('div');
             itemEl.className = 'menu-item';
+            
+            // Add special class for add-on items
+            if (section.id === "addons") {
+                itemEl.classList.add('addon-item');
+            }
             
             const nameEl = document.createElement('div');
             nameEl.className = 'item-name';
