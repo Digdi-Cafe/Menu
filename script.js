@@ -49,8 +49,11 @@ const qrModal = document.getElementById('qrModal');
 const showQrBtn = document.getElementById('showQr');
 const closeQr = document.querySelector('.close-qr');
 
-// Initialize Menu
+// Initialize Menu - FIXED to prevent duplicates
 function buildMenu() {
+    // Clear existing content first
+    main.innerHTML = '';
+    
     menuData.forEach(section => {
         const sectionEl = document.createElement('section');
         sectionEl.className = 'menu-section';
@@ -63,7 +66,6 @@ function buildMenu() {
         const title = document.createElement('h2');
         title.className = 'section-title';
         title.textContent = section.title;
-        
         header.appendChild(title);
         
         // Add sizes if they exist
@@ -176,40 +178,6 @@ function addTiltEffect() {
     }
 }
 
-// Initialize Everything
-document.addEventListener('DOMContentLoaded', () => {
-    buildMenu();
-    initObserver();
-    setupQrModal();
-    addHaptics();
-    addTiltEffect();
-    
-    // Hide loader after content loads
-    window.addEventListener('load', () => {
-        setTimeout(() => {
-            loader.style.opacity = '0';
-            setTimeout(() => {
-                loader.style.display = 'none';
-            }, 500);
-        }, 1500);
-    });
-});
-
-// Service Worker for Offline Use
-if ('serviceWorker' in navigator) {
-    window.addEventListener('load', () => {
-        navigator.serviceWorker.register('/sw.js')
-            .then(registration => {
-                console.log('ServiceWorker registration successful');
-            })
-            .catch(err => {
-                console.log('ServiceWorker registration failed: ', err);
-            });
-    });
-}
-
-// Add this to your existing script.js
-
 // Theme Toggle Functionality
 function setupThemeToggle() {
     const themeToggle = document.getElementById('themeToggle');
@@ -226,29 +194,42 @@ function setupThemeToggle() {
         localStorage.setItem('theme', isDark ? 'dark' : 'light');
         icon.className = isDark ? 'fas fa-sun' : 'fas fa-moon';
         
-        // Optional: Add haptic feedback
         if ('vibrate' in navigator) {
             navigator.vibrate(10);
         }
     });
 }
 
-// Update the initialization function to include theme toggle
-document.addEventListener('DOMContentLoaded', () => {
+// Initialize Everything - FIXED to prevent duplicate initialization
+function initializeApp() {
     buildMenu();
     initObserver();
     setupQrModal();
     addHaptics();
     addTiltEffect();
-    setupThemeToggle(); // Add this line
+    setupThemeToggle();
     
     // Hide loader after content loads
-    window.addEventListener('load', () => {
+    setTimeout(() => {
+        loader.style.opacity = '0';
         setTimeout(() => {
-            loader.style.opacity = '0';
-            setTimeout(() => {
-                loader.style.display = 'none';
-            }, 500);
-        }, 1500);
+            loader.style.display = 'none';
+        }, 500);
+    }, 1500);
+}
+
+// Start the app - only called once
+document.addEventListener('DOMContentLoaded', initializeApp);
+
+// Service Worker for Offline Use
+if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js')
+            .then(registration => {
+                console.log('ServiceWorker registration successful');
+            })
+            .catch(err => {
+                console.log('ServiceWorker registration failed: ', err);
+            });
     });
-});
+}
