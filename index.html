@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maq Higos. Maq Kape. - Digdi Cafe Digital Menu</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#6F4E37">
+</head>
+<body>
+    <!-- Loading Animation -->
+    <div class="loader">
+        <div class="coffee-container">
+            <div class="coffee-cup">
+                <div class="cup"></div>
+                <div class="plate"></div>
+                <div class="steam">
+                    <div class="steam-particle"></div>
+                    <div class="steam-particle"></div>
+                    <div class="steam-particle"></div>
+                </div>
+            </div>
+            <p class="loading-text">Brewing your menu...</p>
+        </div>
+    </div>
+
+    <!-- Floating Call Button -->
+    <a href="tel:+639277321313" class="float-call">
+        <i class="fas fa-phone"></i>
+    </a>
+
+    <!-- Header -->
+<header class="sticky-header">
+    <div class="header-content">
+        <div class="logo-container">
+            <img src="images/494812996_2937192109789072_8777551735215310421_n-modified.png" alt="Digdi Cafe" class="logo">
+            <div class="logo-text">Digdi Cafe</div>
+        </div>
+        <div class="header-controls">
+            <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+                <i class="fas fa-moon"></i>
+            </button>
+            <div class="social-qr">
+                <a href="https://www.facebook.com/profile.php?id=61577334099026" class="social-btn" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="https://www.instagram.com/digdicafe/" class="social-btn" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <button class="qr-btn" id="showQr">
+                    <i class="fas fa-qrcode"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+</header>
+
+    <!-- Menu Sections -->
+    <main>
+        <!-- Sections will be populated by JavaScript -->
+    </main>
+
+    <!-- QR Modal -->
+    <div class="qr-modal" id="qrModal">
+        <div class="qr-content">
+            <span class="close-qr">&times;</span>
+            <h3>Scan to Save Menu</h3>
+            <img src="assets/menu-qr.webp" alt="Menu QR Code">
+            <p>Point your camera at this code</p>
+        </div>
+    </div>
+
+    <script src="script.js" defer></script>
+
+    <!-- Website Link Footer -->
+<footer class="website-footer">
+    <!-- Floating Website Button -->
+<a href="https://www.yourcafewebsite.com" class="float-website" target="_blank" rel="noopener noreferrer">
+    <i class="fas fa-globe"></i>
+</a>
+</footer>
+</body>
+</html>
