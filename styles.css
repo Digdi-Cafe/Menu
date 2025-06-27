@@ -175,11 +175,13 @@ body.dark-mode .close-qr {
 }
 
 .logo-text {
-    font-family: 'Pacifico', cursive;
+    font-family: "Times New Roman", Times, serif;
     font-size: 1.5rem;
     color: var(--cream);
     text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
     animation: glow 2s infinite alternate;
+    font-weight: bold; /* Added for better visibility */
+    letter-spacing: 0.5px; /* Added for better spacing */
 }
 
 .header-controls {
