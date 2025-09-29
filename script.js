@@ -38,7 +38,8 @@ const menuData = [
         sizes: [],
         items: [
             { name: "Espresso Shot", prices: ["₱50"] },
-            { name: "Flavored Syrup", prices: ["₱40"] }
+            { name: "Flavored Syrup", prices: ["₱40"] },
+            { name: "Milk", prices: ["₱40"] }
         ]
     }
 ];
@@ -239,6 +240,7 @@ if ('serviceWorker' in navigator) {
             });
     });
 }
+
 
 
 
