@@ -6,9 +6,9 @@ const menuData = [
         title: "CLASSIC COFFEE",
         sizes: ["8oz", "12oz", "16oz"],
         items: [
-            { name: "Americano", prices: ["₱80", "₱90", "₱110"] },
-            { name: "Cafe Latte", prices: ["₱90", "₱100", "₱120"] },
-            { name: "Cappuccino", prices: ["₱90", "₱100", "₱120"] }
+            { name: "Americano", prices: ["₱90", "₱100", "₱120"] },
+            { name: "Cafe Latte", prices: ["₱100", "₱110", "₱130"] },
+            { name: "Cappuccino", prices: ["₱100", "₱110", "₱130"] }
         ]
     },
     {
@@ -16,11 +16,11 @@ const menuData = [
         title: "COFFEE SERIES",
         sizes: ["8oz", "12oz", "16oz"],
         items: [
-            { name: "Caramel Macchiato", prices: ["₱125", "₱135", "₱155"] },
-            { name: "Dark Mocha", prices: ["₱125", "₱135", "₱155"] },
-            { name: "White Mocha", prices: ["₱125", "₱135", "₱155"] },
-            { name: "Spanish Latte", prices: ["₱105", "₱115", "₱135"] },
-            { name: "Hazelnut Latte", prices: ["₱125", "₱135", "₱155"] }
+            { name: "Caramel Macchiato", prices: ["₱135", "₱145", "₱165"] },
+            { name: "Dark Mocha", prices: ["₱135", "₱145", "₱165"] },
+            { name: "White Mocha", prices: ["₱135", "₱145", "₱165"] },
+            { name: "Spanish Latte", prices: ["₱125", "₱135", "₱155"] },
+            { name: "Hazelnut Latte", prices: ["₱135", "₱145", "₱165"] }
         ]
     },
     {
@@ -28,8 +28,8 @@ const menuData = [
         title: "MATCHA SERIES",
         sizes: ["8oz", "12oz", "16oz"],
         items: [
-            { name: "Dirty Matcha", prices: ["₱110", "₱120", "₱140"] },
-            { name: "Matcha Latte", prices: ["₱90", "₱100", "₱120"] }
+            { name: "Dirty Matcha", prices: ["₱120", "₱130", "₱150"] },
+            { name: "Matcha Latte", prices: ["₱100", "₱110", "₱130"] }
         ]
     },
     {
@@ -37,8 +37,9 @@ const menuData = [
         title: "ADD ONS",
         sizes: [],
         items: [
-            { name: "Espresso Shot", prices: ["₱40"] },
-            { name: "Flavored Syrup", prices: ["₱30"] }
+            { name: "Espresso Shot", prices: ["₱50"] },
+            { name: "Flavored Syrup", prices: ["₱40"] }
+            { name: "Milk", prices: ["₱40"] }
         ]
     }
 ];
@@ -239,3 +240,4 @@ if ('serviceWorker' in navigator) {
             });
     });
 }
+
